@@ -1,0 +1,82 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ":NODE:",
+              ":BLANK_LINE:",
+              ":PACKAGE:",
+              ":BLANK_LINE:",
+              "**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "includes": ["**", "!contrib/**", "!data/**", "!test/**", "!types/**"],
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "noForEach": "off",
+        "useLiteralKeys": "off",
+        "noUselessEscapeInRegex": "off",
+        "noUselessTernary": "warn",
+        "noUselessContinue": "warn"
+      },
+      "correctness": {
+        "noUndeclaredVariables": "error",
+        "noConstAssign": "error",
+        "noConstantCondition": "error",
+        "noUnreachable": "info",
+        "noUnusedFunctionParameters": "warn"
+      },
+      "performance": {
+        "noDelete": "off"
+      },
+      "style": {
+        "noParameterAssign": "off",
+        "noShoutyConstants": "warn",
+        "noUselessElse": "warn",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useNumberNamespace": "error",
+        "noInferrableTypes": "error"
+      },
+      "suspicious": {
+        "noAssignInExpressions": "off",
+        "noDoubleEquals": "warn",
+        "noAsyncPromiseExecutor": "warn",
+        "noControlCharactersInRegex": "warn",
+        "noDebugger": "error",
+        "noEmptyBlockStatements": "warn",
+        "noDuplicateElseIf": "warn"
+      },
+      "nursery": {}
+    }
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "formatter": {
+    "enabled": true,
+    "includes": ["**", "!contrib/**", "!data/**", "!test/**", "!types/**"],
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "files": {
+    "maxSize": 5242880
+  }
+}

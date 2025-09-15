@@ -1,0 +1,33 @@
+changelog:
+  categories:
+    - title: Breaking Changes 🛠
+      labels:
+        - breaking
+        - possibly breaking
+    - title: 🚀 Features
+      labels:
+        - enhancement
+    - title: 🐛 Bug Fixes
+      labels:
+        - bug
+    - title: 🧼 Code Refactoring
+      labels:
+        - refactor
+    - title: 📚 Documentation
+      labels:
+        - documentation
+    - title: 🧪 Testing
+      labels:
+        - test
+    - title: 🏗️ Build System
+      labels:
+        - build
+    - title: 📦 Dependency Updates
+      labels:
+        - dependency
+    - title: 💳 Sponsored Work
+      labels:
+        - sponsored
+    - title: Other Changes
+      labels:
+        - "*"

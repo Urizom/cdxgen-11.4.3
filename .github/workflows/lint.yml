@@ -1,0 +1,47 @@
+name: Biome
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/lint.yml'
+      - '**.cjs'
+      - '**.js'
+      - '**.json'
+      - '!contrib/**'
+      - '!data/**'
+      - '!test/**'
+  push:
+    branches:
+      - master
+      - release/*
+    paths:
+      - '.github/workflows/lint.yml'
+      - '**.cjs'
+      - '**.js'
+      - '**.json'
+      - '!contrib/**'
+      - '!data/**'
+      - '!test/**'
+  workflow_dispatch:
+
+# https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/controlling-permissions-for-github_token
+permissions: {}
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - name: Check Linting
+        run: |
+          npm install --global corepack@latest
+          corepack enable
+          corepack pnpm install --config.strict-dep-builds=true
+          corepack pnpm run lint:check
+        env:
+          CI: true
